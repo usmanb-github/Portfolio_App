@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Portfolio App</string>
+    <string name="name">Usman <br/> Basharat</string>
+    <string name="title">Android Developer</string>
+    <string name="lorem_text">A pioneering and agile developer offering services within one-year self-taught experience of designing, implementing, testing, and maintaining impactful on applications. Adaptable at bringing team members to achieve one goal within different circumstances and areas of different sectors. A strong and keen learner ability to achieve high standards and continue to deliver excellent results. Covering commercial, problem solving software solutions delivery by providing end-to-end programme project delivery virtually.
+        This application is going to highlight my experience and projects that I have worked on.</string>
+    <string name="titleLang">Programming Languages:</string>
+    <string name="langinterest">JAVA XML </string>
+    <string name="lorem_text2">Tellus molestie nunc non blandit massa. Massa tinciduneu ultrices vitae auctor eu augue ut lectus arcu. Tristique sollicitudin nibh sit amet commodo nulla.</string>
+
+</resources>
