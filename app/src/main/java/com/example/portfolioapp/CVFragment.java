@@ -36,7 +36,6 @@ public class CVFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-
         recyclerView = view.findViewById(R.id.recycler_view_cv);
         item = new ArrayList<>();
         item.add(new CVItem("1", "2"));

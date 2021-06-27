@@ -44,7 +44,6 @@ public class CVAdapter extends RecyclerView.Adapter<CVAdapter.CVViewHolder> {
 
         public CVViewHolder(@NonNull View itemView) {
             super(itemView);
-
             text = itemView.findViewById(R.id.title2);
             description = itemView.findViewById(R.id.description);
 
