@@ -32,41 +32,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         getSupportActionBar().hide();
         setHomeFragment();
-
-        /*
-        ImageButton linkedin = findViewById(R.id.imageView11);
-        linkedin.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(Intent.ACTION_VIEW);
-                intent.addCategory(Intent.CATEGORY_BROWSABLE);
-                intent.setData(Uri.parse("https://www.linkedin.com/in/usmanbasharat/"));
-                view.getContext().startActivity(intent);
-            }
-        });
-
-        ImageButton email = findViewById(R.id.imageView12);
-        email.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(Intent.ACTION_SENDTO);
-                intent.setType("text/html");
-                intent.putExtra(Intent.EXTRA_EMAIL, "usman.b@live.co.uk");
-                startActivity(Intent.createChooser(intent, "Send Email"));
-            }
-        });
-
-        ImageButton github = findViewById(R.id.imageView14);
-        github.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(Intent.ACTION_VIEW);
-                intent.addCategory(Intent.CATEGORY_BROWSABLE); //add browsable category for html/chrome
-                intent.setData(Uri.parse("https://github.com/usmanb-github"));
-                startActivity(intent);
-            }
-        }); */
-
+        
         BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(R.id.bottom_navigation);
         bottomNavigationView.setOnNavigationItemSelectedListener(
                 item -> {
