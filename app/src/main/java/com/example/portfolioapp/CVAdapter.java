@@ -16,7 +16,6 @@ public class CVAdapter extends RecyclerView.Adapter<CVAdapter.CVViewHolder> {
 
     List<CVItem> mdata;
 
-
     public CVAdapter(List<CVItem> mdata) {
         this.mdata = mdata;
     }
