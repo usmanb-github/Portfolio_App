@@ -17,7 +17,6 @@ import java.util.zip.Inflater;
 public class BlogAdapter extends RecyclerView.Adapter<BlogAdapter.BlogViewHolder> {
 
     private List<BlogItem> mdata;
-    private ItemClickListener mClickListener;
 
 
     public BlogAdapter(List<BlogItem> mdata) {
@@ -56,20 +55,5 @@ public class BlogAdapter extends RecyclerView.Adapter<BlogAdapter.BlogViewHolder
             super(view);
             title = view.findViewById(R.id.title);
         }
-    }
-
-    // convenience method for getting data at click position
-    String getItem(int id) {
-        return String.valueOf(mdata.get(id));
-    }
-
-    // allows clicks events to be caught
-    void setClickListener(ItemClickListener itemClickListener) {
-        this.mClickListener = itemClickListener;
-    }
-
-    // parent activity will implement this method to respond to click events
-    public interface ItemClickListener {
-        void onItemClick(View view, int position);
     }
 }

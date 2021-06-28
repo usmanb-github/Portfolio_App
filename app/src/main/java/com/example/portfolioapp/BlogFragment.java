@@ -21,7 +21,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import java.util.List;
 
-public class BlogFragment extends Fragment implements BlogAdapter.ItemClickListener{
+public class BlogFragment extends Fragment{
 
 
     RecyclerView rv_blog;
@@ -46,9 +46,5 @@ public class BlogFragment extends Fragment implements BlogAdapter.ItemClickListe
         DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(rv_blog.getContext(),
                 new LinearLayoutManager(getContext()).getOrientation());
         rv_blog.addItemDecoration(dividerItemDecoration);
-    }
-    @Override
-    public void onItemClick(View view, int position) {
-        Toast.makeText(view.getContext(), "You clicked " + blogAdapter.getItem(position) + " on row number " + position, Toast.LENGTH_SHORT).show();
     }
 }
