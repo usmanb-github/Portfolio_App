@@ -5,6 +5,8 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.transition.Explode;
+import android.transition.Slide;
+import android.transition.Transition;
 import android.view.Window;
 
 import androidx.annotation.RequiresApi;
@@ -23,16 +25,24 @@ public class MainActivity extends AppCompatActivity {
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     protected void onCreate(Bundle savedInstanceState) {
         getWindow().requestFeature(Window.FEATURE_CONTENT_TRANSITIONS); //gets called before OnCreate
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         getSupportActionBar().hide();
         setHomeFragment();
+        initPage();
+        Transition ts = new Slide();  //Slide(); //Explode();
+        ts.setDuration(6000);
+        getWindow().setEnterTransition(ts);
+        getWindow().setExitTransition(ts);
+    }
 
-        Explode enterTransition = new Explode();
-        enterTransition.setDuration(500);
-        getWindow().setEnterTransition(enterTransition);
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        finishAfterTransition();
+    }
 
+    private void initPage() {
         BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(R.id.bottom_navigation);
         bottomNavigationView.setOnNavigationItemSelectedListener(
                 item -> {
@@ -65,7 +75,6 @@ public class MainActivity extends AppCompatActivity {
                     return false;
                 });
     }
-
 
     void setHomeFragment() {
         getSupportFragmentManager().beginTransaction().replace(R.id.container, new Fragment_Home()).commit();

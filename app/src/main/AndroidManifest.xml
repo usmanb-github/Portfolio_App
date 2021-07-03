@@ -16,7 +16,7 @@
         <activity
             android:name=".ScreenSaverActivity"
             android:noHistory="true"
-            android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen">
+            android:theme="@style/Theme.PortfolioApp">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />

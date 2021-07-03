@@ -20,6 +20,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -44,7 +45,14 @@ public class ScreenSaverActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         super.setContentView(R.layout.screensaver);
+        Button button = (Button) findViewById(R.id.transition);
 
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                explodeTransitionByXML();
+            }
+        });
 
         final IntentFilter filter = new IntentFilter();
         filter.addAction(Intent.ACTION_SCREEN_OFF);
@@ -61,16 +69,17 @@ public class ScreenSaverActivity extends Activity {
             }
 
             public void onFinish() {
-                ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(ScreenSaverActivity.this);
-                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-                intent.putExtra(ConstantsTransition.animation_type, ConstantsTransition.TransitionType.ExplodeJava);
-                startActivity(intent, options.toBundle());
+                explodeTransitionByXML();
             }
 
         }.start();
+
     }
 
-    private void explodeTransitionByCode() {
-
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
+    private void explodeTransitionByXML() {
+        ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(this);
+        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+        startActivity(intent, options.toBundle());
     }
 }
