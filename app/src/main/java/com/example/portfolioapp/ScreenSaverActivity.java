@@ -45,15 +45,6 @@ public class ScreenSaverActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         super.setContentView(R.layout.screensaver);
-        Button button = (Button) findViewById(R.id.transition);
-
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                explodeTransitionByXML();
-            }
-        });
-
         final IntentFilter filter = new IntentFilter();
         filter.addAction(Intent.ACTION_SCREEN_OFF);
         registerReceiver(new BroadcastReceiver() {
