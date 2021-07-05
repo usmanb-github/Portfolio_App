@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.transition.Explode;
 import android.transition.Slide;
 import android.transition.Transition;
+import android.transition.TransitionInflater;
 import android.view.Window;
 
 import androidx.annotation.RequiresApi;
@@ -19,7 +20,6 @@ import java.io.File;
 
 public class MainActivity extends AppCompatActivity {
 
-    RecyclerView menuRV;
 
     @Override
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
@@ -30,17 +30,10 @@ public class MainActivity extends AppCompatActivity {
         getSupportActionBar().hide();
         setHomeFragment();
         initPage();
-        Transition ts = new Slide();  //Slide(); //Explode();
-        ts.setDuration(6000);
-        getWindow().setEnterTransition(ts);
-        getWindow().setExitTransition(ts);
+        Transition transition = TransitionInflater.from(this).inflateTransition(R.transition.explode);
+        getWindow().setEnterTransition(transition);
     }
 
-    @Override
-    public void onBackPressed() {
-        super.onBackPressed();
-        finishAfterTransition();
-    }
 
     private void initPage() {
         BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(R.id.bottom_navigation);
