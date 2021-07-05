@@ -33,24 +33,13 @@ public class PortfolioFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        view.findViewById(R.id.imageView6).setOnClickListener(new View.OnClickListener() {
+             view.findViewById(R.id.imageView7).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent();
                 intent.setAction(Intent.ACTION_VIEW);
                 intent.addCategory(Intent.CATEGORY_BROWSABLE);
-                intent.setData(Uri.parse("https://github.com/usmanb-github/Mobile-Sports-Event-Reporter"));
-                view.getContext().startActivity(intent);
-            }
-        });
-
-        view.findViewById(R.id.imageView7).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent();
-                intent.setAction(Intent.ACTION_VIEW);
-                intent.addCategory(Intent.CATEGORY_BROWSABLE);
-                intent.setData(Uri.parse("https://github.com/usmanb-github/A-mobile-application-to-improve-nutritional-awareness-for-students-using-NFC"));
+                intent.setData(Uri.parse("https://github.com/usmanb-github"));
                 view.getContext().startActivity(intent);
             }
         });
