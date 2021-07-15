@@ -50,14 +50,17 @@ public class MainActivity extends AppCompatActivity {
                             setCVFragment();
                             return true;
                         case R.id.page_4:
-                            DownloadManager downloadManager;
+                         /*   DownloadManager downloadManager;
                             String exampleURL = "https://drive.google.com/file/d/1wIkIlNjBbfS5A57OcFnAB1GSlTlMabtH/view?usp=sharing";
                             File path = new File("file:///C:/Users/usman/Documents/PortfolioApp/doc/CV.docx");
                             downloadManager = (DownloadManager) getSystemService(DOWNLOAD_SERVICE);
                             DownloadManager.Request request = new DownloadManager.Request(Uri.parse(exampleURL));
                             request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
                             request.setAllowedNetworkTypes(DownloadManager.Request.NETWORK_WIFI | DownloadManager.Request.NETWORK_MOBILE);
-                            Long reference = downloadManager.enqueue(request);
+                            Long reference = downloadManager.enqueue(request); */
+                            getSupportFragmentManager().beginTransaction().replace(R.id.container, new CVDownloadFragment()).commit();
+
+
                             return true;
                         case R.id.page_5:
                             setBlogFragment();
