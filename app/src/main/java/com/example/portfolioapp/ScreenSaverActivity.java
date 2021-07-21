@@ -37,7 +37,6 @@ import java.util.TimerTask;
 
 public class ScreenSaverActivity extends Activity {
 
-    ConstantsTransition type;
     String toolbarTitle;
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
